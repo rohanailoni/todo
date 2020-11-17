@@ -1,0 +1,15 @@
+<html>
+<body>
+    {% for i in t%}
+        <form method="post" action="/deletetodo/{{i.todo_id}}/">{%csrf_token%}
+        {{i.todo_item}}<input type="submit" name="delete" value="delete"><br/>
+        </form>
+    {% endfor %}
+    <form method="post" action="/addtodo/">{% csrf_token %}
+        <input type="text" name="t" placeholder="your next working item" >
+        <input type="submit" placeholder="add my todo list">
+
+
+    </form>
+</body>
+</html>
